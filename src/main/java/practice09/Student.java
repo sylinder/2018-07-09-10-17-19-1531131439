@@ -23,4 +23,13 @@ public class Student extends Person{
         }
         return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Student. I am at " + getKlass().getDisplayName() + ".";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (! (obj instanceof Person)) {
+            return false;
+        }
+        Person person = (Person)obj;
+        return this.getId() == person.getId();
+    }
 }

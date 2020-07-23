@@ -26,4 +26,22 @@ public class Person {
     public String introduce() {
         return "My name is " + getName() + ". I am " + getAge() + " years old.";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Person)) {
+            return  false;
+        }
+        Person person = (Person) obj;
+        if (getId() != person.getId()) {
+            return false;
+        }
+        if (!getName().equals(person.getName())) {
+            return false;
+        }
+        if (getAge() != person.getAge()) {
+            return false;
+        }
+        return true;
+    }
 }
